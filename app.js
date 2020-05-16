@@ -26,12 +26,12 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect(process.env.DATABASE);
 
 
 //mongodb://localhost/campground
 
-
+//mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority
 app.locals.moment = require('moment'); //moment is available for use in all of your view files via the variable named moment
 
 //PASSPORT CONFIGURATION
