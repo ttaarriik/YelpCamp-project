@@ -5,10 +5,10 @@ var express = require("express"),
 	mongoose = require("mongoose"),
 	camps = require("./modules/campground"),
 	Comment = require("./modules/comments"),
-	seedDB = require("./seed");
-	User = require("./modules/user");
+	seedDB = require("./seed"),
+	User = require("./modules/user"),
 	passport = require("passport"),
-	localStrategy = require("passport-local");
+	localStrategy = require("passport-local"),
 	passportLocalMongoose = require("passport-local-mongoose"),
 	campgroundRoute = require("./routes/campgrounds"),
 	commentRoute = require("./routes/comments"),
@@ -26,12 +26,11 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.DATABASE);
 
+mongoose.connect(process.env.DATABASEURL);
 
-//mongodb://localhost/campground
-
-//mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority
+// mongoose.connect("mongodb+srv://ttaarriik:<nfhbr1996>@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
+// mongoose.connect("mongodb://localhost/campground");
 app.locals.moment = require('moment'); //moment is available for use in all of your view files via the variable named moment
 
 //PASSPORT CONFIGURATION
