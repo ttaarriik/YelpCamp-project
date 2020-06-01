@@ -27,7 +27,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-var url = process.env.DATABASEURL || "mongodb://localhost/campground";
+var url = process.env.DATABASE || "mongodb://localhost/campground";
 
 mongoose.connect(url, { useNewUrlParser: true });
 
