@@ -5,6 +5,7 @@ var router = express.Router();
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
+var passport = require("passport");
 
 
 
