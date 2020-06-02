@@ -29,7 +29,7 @@ mongoose.set('useUnifiedTopology', true);
 
 var url = process.env.DATABASE || "mongodb://localhost/campground";
 
-mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/campground");
 
 // mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
 // mongoose.connect("mongodb://localhost/campground");
