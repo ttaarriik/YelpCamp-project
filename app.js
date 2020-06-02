@@ -29,9 +29,9 @@ mongoose.set('useUnifiedTopology', true);
 
 var url = process.env.DATABASE || "mongodb://localhost/campground";
 
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
 
-// mongoose.connect("mongodb+srv://ttaarriik:<nfhbr1996>@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
 // mongoose.connect("mongodb://localhost/campground");
 app.locals.moment = require('moment'); //moment is available for use in all of your view files via the variable named moment
 
