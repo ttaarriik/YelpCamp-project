@@ -27,9 +27,9 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-var url = process.env.DATABASE || "mongodb://localhost/campground";
+var url = process.env.DATABASEURL || "mongodb://localhost/campground";
 
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.connect( url, { useNewUrlParser: true });
 
 // mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
 // mongoose.connect("mongodb://localhost/campground");

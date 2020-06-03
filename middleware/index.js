@@ -8,6 +8,7 @@ middleware.checkUserOwnership = function(req, res, next){
 		camps.findById(req.params.id, function(err, foundId){
 			if(err){
 				res.redirect("back");
+				
 			}
 			if(foundId.author.id.equals(req.user._id) || req.user && req.user.isAdmin)
 			{
@@ -15,6 +16,7 @@ middleware.checkUserOwnership = function(req, res, next){
 			}
 			else{
 				res.redirect("back");
+				
 			}
 		})
 	}else{
@@ -28,7 +30,7 @@ middleware.checkCommentOwnership = function (req, res, next){
 			if(err){
 				res.redirect("back");
 			}
-			if(foundId.author.id.equals(req.user._id))
+			if(foundId.author.id.equals(req.user._id) || req.user && req.user.isAdmin)
 			{
 				next();
 			}
