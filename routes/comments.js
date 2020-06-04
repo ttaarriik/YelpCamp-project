@@ -71,14 +71,16 @@ router.delete("/campgrounds/:id/:comments_id", middleware.checkCommentOwnership,
 		if(err){
 			res.redirect("back");
 		}else{
-				camps.updateOne({} , {
-            	$pull: {comments: req.params.comment_id}
+				camps.findByIdAndUpdate(req.params.id, {
+            	$pull: {comments:req.params.comment_id}
 					}, function(err, updatedCamp){
 						if(err){
 							console.log(err);
+						} else {
+							req.flash("success", "Comment deleted");
+							res.redirect("/campgrounds/" + req.params.id);	
 						}
-						req.flash("success", "Comment deleted");
-						res.redirect("/campgrounds/" + req.params.id);
+					
 					});
 			
 		}
