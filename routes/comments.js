@@ -72,7 +72,7 @@ router.delete("/campgrounds/:id/:comments_id", middleware.checkCommentOwnership,
 			res.redirect("back");
 		}else{
 				camps.findByIdAndUpdate(req.params.id, {
-            	$pull: {comments:req.params.comment_id}
+            	$pull: {comments:req.params.comments_id}
 					}, function(err, updatedCamp){
 						if(err){
 							console.log(err);
