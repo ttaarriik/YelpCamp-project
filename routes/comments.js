@@ -5,7 +5,7 @@ var Comment = require("../modules/comments");
 var middleware = require("../middleware");
 
 
-router.get("/campgrounds/:id/comments/new", middleware.isLoggedIn, function(req, res){
+router.get("/campgrounds/:id/comments", middleware.isLoggedIn, function(req, res){
 	camps.findById(req.params.id, function(err, camp){
 		if(err){
 			console.log(err);

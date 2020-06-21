@@ -7,7 +7,6 @@ var geo = require('mapbox-geocoding');
 var FuzzySearch = require("fuzzy-search");
  
 geo.setAccessToken('pk.eyJ1IjoidHRhYXJyaWlrMTk5NiIsImEiOiJjazluaWdqcmcwMm9tM2dtcmhucDk0czQ4In0.kwhhtOEaRS8g7E-R05R9BQ');
- 
 
 router.get("/", function(req, res){
 	
@@ -43,11 +42,12 @@ router.get("/campgrounds", function(req, res){
 	
 })
 
-//NEW PAGE
-router.get("/campgrounds/new", middleware.isLoggedIn, function(req,res){
+
+
+router.get("/campgrounds/addNew", middleware.isLoggedIn, function(req,res){
 	
 	res.render("campgrounds/addNew");
-})
+});
 
 
 //CREATE PAGE

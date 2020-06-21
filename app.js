@@ -31,8 +31,6 @@ var url = process.env.DATABASEURL || "mongodb://localhost/campground";
 
 mongoose.connect( url, { useNewUrlParser: true });
 
-// mongoose.connect("mongodb+srv://ttaarriik:nfhbr1996@cluster0-jspi4.mongodb.net/test?retryWrites=true&w=majority");
-// mongoose.connect("mongodb://localhost/campground");
 app.locals.moment = require('moment'); //moment is available for use in all of your view files via the variable named moment
 
 //PASSPORT CONFIGURATION
